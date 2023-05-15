@@ -1,3 +1,4 @@
+
 <?php
 
 use App\Http\Controllers\IndexController;
@@ -22,6 +23,9 @@ Route::get('/test', function () {
     return view('layout');
 } );
 
+Route::get('/form', function () {
+    return view('form.form');
+});
 
 Route::get('/email', function () {
     /*$notification = new Notification();*/

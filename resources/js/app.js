@@ -6,3 +6,9 @@ import '../css/main.css';
 import '../css/pure.css';
 /*import '../css/style.css';
 import '../css/responsive.css';*/
+
+/*import Alpine from 'alpinejs';
+
+window.Alpine = Alpine;
+
+Alpine.start();*/

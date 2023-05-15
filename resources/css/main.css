@@ -47,6 +47,7 @@ position: relative;
     margin-left: 25px;
 opacity: 95%;
 
+
 }
 
 #last{
@@ -206,9 +207,11 @@ footer
 */
 
 .footer{
+
+
     color: #7d7a7a;
     margin-left: 20px;
-    margin-top:55px;
-    margin-bottom: auto;
+
+    margin-bottom: 0px;
 
 }

@@ -6,24 +6,16 @@
 
         <div class="last">
             <div style="font-size: xx-large " class="font1">LATEST UPDATE</div>
-
             <div id="last">
                 <!--این بخش توی یک صفحه دیگه قرار داشت-->
                 <br>
-
                 <div class='clearfix'></div>
-
                 <div style='display: inline-flex'>
-
-
                     <div class='inblock' style='direction: ltr' >reletive humidity :  </div>
-
                     <div class='last-update inblock'>
                         humidity %RH
                     </div>
-
                     <div class='loader' style='margin-left: 15px'></div>
-
                 </div>
             </div>
 

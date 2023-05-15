@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{asset('OldProjectm/pure.css')}}">
 
     <script src="{{asset('OldProjectm/jquery.min.js')}}"></script>--}}
-
+    <link rel="icon" href="{{ asset('pics/6393411.png') }}">
     @vite(['resources/js/app.js'])
 
 
@@ -76,7 +76,8 @@
 
 <body>
 <header>
-    <div style="margin: 12px 155px 15px 155px;background-color: #6c29fa;padding: 20px 10px 20px 10px;border-radius: 7px">
+    <div
+        style="margin: 12px 155px 15px 155px;background-color: #6c29fa;padding: 20px 10px 20px 10px;border-radius: 7px">
         <div STYLE="text-align: center; font-size: x-large;color: white">Room Humidity Monitoring</div>
     </div>
     <div class="pure-menu-separator" style="margin-top:25px"></div>
@@ -88,12 +89,12 @@
     <div class="clearfix"></div>
 
     <!--sidebar-->
-<x-sidebar></x-sidebar>
+    <x-sidebar></x-sidebar>
 
 
     <!--content-->
     <div class="content pure-u-17-24 main1 ">
-@yield('content')
+        @yield('content')
 
 
 
@@ -101,7 +102,7 @@
 
         <!--footer-->
         <div class="footer">
-            <p >contact: aliarefzadeh1999@gmail.com</p>
+            <p>contact: aliarefzadeh1999@gmail.com</p>
             <p>Created by ALI AREFZADEH. © 2022-2023</p>
 
         </div>
