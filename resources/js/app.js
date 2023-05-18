@@ -2,7 +2,7 @@ import './bootstrap';
 import './jquery.min';
 
 import '../css/main.css';
-/*import '../css/bootstrap.min.css';*/
+import '../css/bootstrap.min.css';
 import '../css/pure.css';
 /*import '../css/style.css';
 import '../css/responsive.css';*/
@@ -12,3 +12,12 @@ import '../css/responsive.css';*/
 window.Alpine = Alpine;
 
 Alpine.start();*/
+
+
+
+import Alpine from 'alpinejs';
+
+window.Alpine = Alpine;
+
+Alpine.start();
+

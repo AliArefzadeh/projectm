@@ -76,10 +76,12 @@
 
 <body>
 <header>
+    <a href="{{route('index')}}">
     <div
         style="margin: 12px 155px 15px 155px;background-color: #6c29fa;padding: 20px 10px 20px 10px;border-radius: 7px">
         <div STYLE="text-align: center; font-size: x-large;color: white">Room Humidity Monitoring</div>
     </div>
+    </a>
     <div class="pure-menu-separator" style="margin-top:25px"></div>
     <div class="pure-menu-horizontal" style="background-color: #2a2d2d"></div>
 </header>
@@ -94,6 +96,13 @@
 
     <!--content-->
     <div class="content pure-u-17-24 main1 ">
+
+        @if(session('alert'))
+            <div class="alert alert-success" style="margin: 15px;border-radius: 5px;direction: rtl ">
+                {{session('alert')}}
+            </div>
+        @endif
+
         @yield('content')
 
 

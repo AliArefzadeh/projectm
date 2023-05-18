@@ -1,7 +1,9 @@
 
 <?php
 
+use App\Http\Controllers\HumidityController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\ProfileController;
 use App\Mail\TopicCreated;
 use App\Models\User;
 use App\Services\Notification\Notification;
@@ -23,9 +25,11 @@ Route::get('/test', function () {
     return view('layout');
 } );
 
-Route::get('/form', function () {
-    return view('form.form');
-});
+Route::get('/humidity/create',[HumidityController::class,'create'])->name('humidity.create');
+Route::post('/store',[HumidityController::class,'store'])->name('humidity.store');
+
+
+
 
 Route::get('/email', function () {
     /*$notification = new Notification();*/
@@ -36,3 +40,21 @@ Route::get('/email', function () {
     $notification = resolve(Notification::class);
     $notification->sendEmail(User::find(1),new TopicCreated());
 });
+
+
+
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
+
+

@@ -5,11 +5,13 @@
 
 
     <div class="menu" style="background-color: #559bd4; padding: 5px;margin: 20px 10px 30px 10px;border-radius: 10px;text-align: center">
-        <form method="get" style="margin-bottom: 25px">
+        <form action="{{route('humidity.store')}}" method="post" style="margin-bottom: 25px">
+            @csrf
             <label>enter humidity :</label>
-            <input type="number" name="humid" >
+            <input type="number" name="humidity" >
             <button id="btn1" value="submit">Save</button>
             <button id="clearNum" type="reset">Clear</button>
+            <textarea name="description" id="" cols="65" rows="4" style="display: block;text-align: center;margin:10px auto 0 auto;direction: rtl" ></textarea>
         </form>
     </div>
 

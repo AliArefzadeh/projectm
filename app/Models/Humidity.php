@@ -10,6 +10,8 @@ class Humidity extends Model
 {
     use HasFactory;
 
+    protected $fillable=['humidity','description'];
+
     public function getPersianTimeAttribute($humidity)
     {
         /*$time = $humidity->where('created_at','<',)*/
