@@ -88,6 +88,8 @@
 
 <div class="main pure-g">
 
+    {{--<x-header-menu></x-header-menu>--}}
+
     <div class="clearfix"></div>
 
     <!--sidebar-->

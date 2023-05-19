@@ -10,7 +10,7 @@ class HumidityController extends Controller
     public function create()
     {
         $humidity = Humidity::all();
-        return view('form.form', compact('humidity'));
+        return view('form.create', compact('humidity'));
     }
     public function store(Request $request)
     {

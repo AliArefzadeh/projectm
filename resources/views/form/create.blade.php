@@ -43,10 +43,10 @@
             <!--led on/off-->
             <!--led on/off-->
             <!--این بخش در صفحه دیگری قرار داشت-->
-            <form action="ledrecieve.php" method="get" style="margin-bottom: 25px; margin-top: 25px;">
+         {{--   <form action="ledrecieve.php" method="get" style="margin-bottom: 25px; margin-top: 25px;">
                 <input type="number" name="onoff" id="onoff" style="display: none" value="3">
             </form>
-            <button value="submit" id="led">led on/off</button>
+            <button value="submit" id="led">led on/off</button>--}}
             <!--برای اینکه صفحه رفرش نشود و نتایج به درستی نمایش داده شوند در تگ form قرار نگرفته-->
 
             <div id="switch" style="text-align: center; margin-left: auto;margin-right: auto; position: center;display: inline-block ">
@@ -62,11 +62,11 @@
 
 
         <!--results-->
-        <div class="result" id="select">
+        {{--<div class="result" id="select">
             <div class="results">
                 <div class="result">Waiting for your selection...</div>
             </div>
-        </div>
+        </div>--}}
 
 
 

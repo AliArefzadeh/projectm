@@ -32,11 +32,13 @@ body {
     background: url("../pics/bk.jpg") no-repeat top center;
     background-color: #1c2d61;
     font-family: "Sansation_Regular";
-
+margin: 0;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    font-size: 14px;
+    line-height: 1.42857143;
 }
 
 .main1
@@ -68,22 +70,22 @@ opacity: 95%;
 
 
 .last-update {
-color: #202833;
-    height: 20px;
-    display: inline-block;
-    background-color: white;
-    border: #202833;
-    border-radius: 7px;
-    /*   margin: 10px 100px 0 10px; */
-    padding: 5px 20px 5px 20px;
+color: #202833 !important;
+    height: 20px !important;
+    display: inline-block !important;
+    background-color: white !important;
+    border: #202833 !important;
+    border-radius: 7px !important;
+       /*margin: 10px 100px 0 10px !important;*/
+    padding: 12px 20px 25px 20px !important;
 }
 
 .inblock {
-    text-align: center;
-    float: right;
-    margin-left: 15px;
-    padding: 10px;
-    border-radius: 5px;
+    text-align: center ;
+    float: right ;
+    margin-left: 15px ;
+    padding: 10px ;
+    border-radius: 5px ;
 
 }
 
@@ -147,6 +149,9 @@ float: left;
     margin-top: 15px;
     margin-bottom: 5px;
 }
+div {
+    display: block;
+}
 .total div{
     display: inline-block;
     margin-left:13px ;
@@ -208,10 +213,96 @@ footer
 
 .footer{
 
+    position: relative;
+    bottom: 0px;
+    left: 0px;
+    width: 50%;
+    padding:20px;
+    margin-left: 10px;
+    margin-top:15px ;
 
     color: #7d7a7a;
-    margin-left: 20px;
+    /*margin-left: 20px;
 
-    margin-bottom: 0px;
+    margin-bottom: 0px;*/
 
 }
+
+
+
+/*
+
+.pure-menu-separator {
+    background-color: #dfdfdf;
+    display: block;
+    height: 1px;
+    font-size: 0;
+    margin: 7px 2px;
+    overflow: hidden;
+}
+.pure-menu-horizontal li {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: middle;
+}
+
+
+
+.pure-g [class *= "pure-u"] {
+}
+
+.pure-u-6-24,
+.pure-u-17-24 {
+    display: inline-block;
+
+}
+
+.pure-u-6-24 {
+    width: 25%;
+    *width: 24.9690%;
+}
+
+.pure-u-1-4, .pure-u-6-24 {
+    width: 25%;
+}
+
+.pure-g {
+    letter-spacing: -0.31em;
+}
+*/
+.pure-menu-separator {
+    background-color: #dfdfdf;
+    display: block;
+    height: 1px;
+    font-size: 0;
+    margin: 7px 2px;
+    overflow: hidden;
+}
+.pure-menu-horizontal li {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: middle;
+}
+
+ .pure-u-6-24, .pure-u-17-24{
+     margin: 15px;
+     display: inline-block;
+     letter-spacing: normal;
+     word-spacing: normal;
+     vertical-align: top;
+     text-rendering: auto;
+ }
+
+
+ .pure-u-17-24 {
+     width: 70%;
+ }
+
+
+ .pure-u-1-4, .pure-u-6-24 {
+     width: 25%;
+ }
+
+
