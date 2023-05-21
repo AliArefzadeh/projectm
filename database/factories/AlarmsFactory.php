@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 
 
-class AlarmFactory extends Factory
+class AlarmsFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -28,12 +28,11 @@ class AlarmFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => User::inRandomOrder()->limit(1)->get(),
-            'humidity_id'=>Humidity::inRandomOrder()->limit(1)->get(),
-            'led' => 1,
-            'contruction' => 0,
+            'user_id' => User::all()->random()->id,
+            'humidity_id'=>Humidity::all()->random()->id,
+            'construction' => 0,
             'manual' => 0,
-
+            'led' => 1,
 
         ];
     }
