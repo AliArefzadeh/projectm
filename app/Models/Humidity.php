@@ -12,6 +12,11 @@ class Humidity extends Model
 
     protected $fillable=['humidity','description'];
 
+    public function alarm()
+    {
+        $this->hasMany(Alarms::class);
+    }
+
     public function getPersianTimeAttribute($humidity)
     {
         /*$time = $humidity->where('created_at','<',)*/

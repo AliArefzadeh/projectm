@@ -27,6 +27,7 @@ Route::get('/test', function () {
 
 Route::get('/humidity/create',[HumidityController::class,'create'])->name('humidity.create');
 Route::post('/store',[HumidityController::class,'store'])->name('humidity.store');
+Route::get('/form',[HumidityController::class,'form'])->name('humidity.form');
 
 
 
