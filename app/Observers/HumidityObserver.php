@@ -12,7 +12,7 @@ class HumidityObserver
      */
     public function created(Humidity $humidity): void
     {
-        dd($request);
+
 
         if ($humidity['humidity'] > 43) {
             Alarms::create([
