@@ -31,7 +31,7 @@ class AlarmsFactory extends Factory
             'user_id' => User::all()->random()->id,
             'humidity_id'=>Humidity::all()->random()->id,
             'construction' => 0,
-            'manual' => 0,
+            'manual' => 1,
             'led' => 1,
 
         ];

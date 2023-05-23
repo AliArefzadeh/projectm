@@ -1,6 +1,7 @@
 
 <?php
 
+use App\Http\Controllers\AlarmsController;
 use App\Http\Controllers\HumidityController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ProfileController;
@@ -29,7 +30,7 @@ Route::get('/humidity/create',[HumidityController::class,'create'])->name('humid
 Route::post('/store',[HumidityController::class,'store'])->name('humidity.store');
 Route::get('/form',[HumidityController::class,'form'])->name('humidity.form');
 
-
+Route::get('/alarm', [AlarmsController::class, 'store'])->name('alarm.store');
 
 
 Route::get('/email', function () {

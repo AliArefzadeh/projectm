@@ -15,6 +15,23 @@
         </form>
     </div>
 
+    <!--led on/off-->
+    <!--led on/off-->
+    <!--این بخش در صفحه دیگری قرار داشت-->
+
+    <div class="send">
+        <div id="switch" style="text-align: center; margin-left: auto;margin-right: auto; position: center;display: inline-block ">
+
+            <div style="border-radius: 10px; background-color:#62e829 ;margin-left: 10px;padding: 5px; width:65%;display: inline-block "> on </div>
+            <div style="border-radius: 10px; background-color:#B51945 ;margin-left: 10px;padding: 5px; width:65%;display: inline-block "> off </div>
+               <form action="" method="get" style="margin-bottom: 25px; margin-top: 25px;">
+           <input type="number" name="onoff" id="onoff" style="display: none" value="3">
+       </form>
+       <button value="submit" id="led">led on/off</button>
+            <!--برای اینکه صفحه رفرش نشود و نتایج به درستی نمایش داده شوند در تگ form قرار نگرفته-->
+
+        </div>
+    </div>
 
     <!--searchBar-->
     <div>
@@ -38,27 +55,8 @@
         <div class="send">
             <button id="send" >search</button>
             <!--برای اینکه صفحه رفرش نشود و نتایج به درستی نمایش داده شوند در تگ form قرار نگرفته-->
-
-
-            <!--led on/off-->
-            <!--led on/off-->
-            <!--این بخش در صفحه دیگری قرار داشت-->
-         {{--   <form action="ledrecieve.php" method="get" style="margin-bottom: 25px; margin-top: 25px;">
-                <input type="number" name="onoff" id="onoff" style="display: none" value="3">
-            </form>
-            <button value="submit" id="led">led on/off</button>--}}
-            <!--برای اینکه صفحه رفرش نشود و نتایج به درستی نمایش داده شوند در تگ form قرار نگرفته-->
-
-            <div id="switch" style="text-align: center; margin-left: auto;margin-right: auto; position: center;display: inline-block ">
-
-                <div style="border-radius: 10px; background-color:#62e829 ;margin-left: 10px;padding: 5px; width:65%;display: inline-block "> on </div>
-
-
-                <div style="border-radius: 10px; background-color:#B51945 ;margin-left: 10px;padding: 5px; width:65%;display: inline-block "> off </div>
-
-            </div>
-
         </div>
+
 
 
         <!--results-->

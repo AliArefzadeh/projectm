@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\Alarms;
+use App\Models\Humidity;
+use App\Observers\AlarmsObserver;
+use App\Observers\HumidityObserver;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -25,7 +29,8 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Alarms::observe(AlarmsObserver::class);
+        Humidity::observe(HumidityObserver::class);
     }
 
     /**
@@ -33,6 +38,6 @@ class EventServiceProvider extends ServiceProvider
      */
     public function shouldDiscoverEvents(): bool
     {
-        return false;
+        return true;
     }
 }

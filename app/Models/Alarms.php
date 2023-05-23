@@ -9,6 +9,8 @@ class Alarms extends Model
 {
     use HasFactory;
 
+    protected $fillable=['user_id', 'humidity_id', 'construction', 'manual', 'led'];
+
     public function user()
     {
         $this->belongsTo(User::class);
