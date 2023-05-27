@@ -7,13 +7,15 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>monitoring</title>
+    {{--<script src="{{asset('OldProjectm/mainf.js')}}"></script>--}}
 
     {{--<link rel="stylesheet" href="{{asset('OldProjectm/main.css')}}">
     <link rel="stylesheet" href="{{asset('OldProjectm/pure.css')}}">
 
     <script src="{{asset('OldProjectm/jquery.min.js')}}"></script>--}}
     <link rel="icon" href="{{ asset('pics/6393411.png') }}">
-    @vite(['resources/js/app.js'])
+    @vite('resources/js/app.js')
+
 
 
     <!--<script>

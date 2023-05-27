@@ -3,16 +3,35 @@
 @section('content')
     <!--content-->
 
+    </form>
+    <form action="{{route('alarm.store')}}" method="post">
+        @csrf
+        <label class="switch">
+            <input type="checkbox" name="construction" value="off" id="switch"  onclick="tgl()">
+            <span class="slider round"></span>
+        </label>
 
-    <div class="menu" style="background-color: #559bd4; padding: 5px;margin: 20px 10px 30px 10px;border-radius: 10px;text-align: center">
+        {{--<input type="checkbox" name="construction" value="on" id="switch" checked onclick="tgl()" /><label class="tog" for="switch">Toggle</label>--}}
+        <button id="btn1" value="submit">construction</button>
+    </form>
+
+
+
+
+    <div class="menu"
+         style="background-color: #559bd4; padding: 5px;margin: 20px 10px 30px 10px;border-radius: 10px;text-align: center">
         <form action="{{route('humidity.store')}}" method="post" style="margin-bottom: 25px">
             @csrf
             <label>enter humidity :</label>
-            <input type="number" name="humidity" >
+            <input type="number" name="humidity">
+
             <button id="btn1" value="submit">Save</button>
             <button id="clearNum" type="reset">Clear</button>
-            <textarea name="description" id="" cols="65" rows="4" style="display: block;text-align: center;margin:10px auto 0 auto;direction: rtl" ></textarea>
-        </form>
+            <textarea name="description" id="" cols="65" rows="4"
+                      style="display: block;text-align: center;margin:10px auto 0 auto;direction: rtl"></textarea>
+            <label for="construction">construction</label>
+
+
     </div>
 
     <!--led on/off-->
@@ -20,14 +39,21 @@
     <!--این بخش در صفحه دیگری قرار داشت-->
 
     <div class="send">
-        <div id="switch" style="text-align: center; margin-left: auto;margin-right: auto; position: center;display: inline-block ">
+        <div id="switch"
+             style="text-align: center; margin-left: auto;margin-right: auto; position: center;display: inline-block ">
 
-            <div style="border-radius: 10px; background-color:#62e829 ;margin-left: 10px;padding: 5px; width:65%;display: inline-block "> on </div>
-            <div style="border-radius: 10px; background-color:#B51945 ;margin-left: 10px;padding: 5px; width:65%;display: inline-block "> off </div>
-               <form action="" method="get" style="margin-bottom: 25px; margin-top: 25px;">
-           <input type="number" name="onoff" id="onoff" style="display: none" value="3">
-       </form>
-       <button value="submit" id="led">led on/off</button>
+            <div
+                style="border-radius: 10px; background-color:#62e829 ;margin-left: 10px;padding: 5px; width:65%;display: inline-block ">
+                on
+            </div>
+            <div
+                style="border-radius: 10px; background-color:#B51945 ;margin-left: 10px;padding: 5px; width:65%;display: inline-block ">
+                off
+            </div>
+            <form action="" method="get" style="margin-bottom: 25px; margin-top: 25px;">
+                <input type="number" name="onoff" id="onoff" style="display: none" value="3">
+            </form>
+            <button value="submit" id="led">led on/off</button>
             <!--برای اینکه صفحه رفرش نشود و نتایج به درستی نمایش داده شوند در تگ form قرار نگرفته-->
 
         </div>
@@ -53,10 +79,9 @@
             <br>
         </form>
         <div class="send">
-            <button id="send" >search</button>
+            <button id="send">search</button>
             <!--برای اینکه صفحه رفرش نشود و نتایج به درستی نمایش داده شوند در تگ form قرار نگرفته-->
         </div>
-
 
 
         <!--results-->
@@ -67,9 +92,6 @@
         </div>--}}
 
 
-
     </div>
-
-
 
 @endsection

@@ -12,15 +12,15 @@ class AlarmsObserver
      */
     public function created(Alarms $alarms): void
     {
-        $prev = $alarms['id'] - 1;
+        /*$prev = $alarms['id'] - 1;
         $prev = Alarms::find($prev);
         if ($prev['construction'] == 'on') {
             $alarms->update([
                 'construction' => 'on',
                 'manual' => 1,
-                'led' => 'off',
+                'led' => $alarms->led,
             ]);
-        }
+        }*/
     }
 
     /**

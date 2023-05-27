@@ -12,9 +12,20 @@ class HumidityObserver
      */
     public function created(Humidity $humidity): void
     {
+        $alarms = Alarms::latest()->first();
+        /*$prev = $alarms['id'] - 1;
+        $prev = Alarms::find($prev);*/
+        if ($alarms['construction'] == '1') {
+            Alarms::create([
+                'user_id' => auth()->id(),
+                'humidity_id' => $humidity['id'],
+                'construction' => 1,
+                'manual' => 1,
+                'led' => 'on',
+            ]);
+        }
 
-
-        if ($humidity['humidity'] > 43) {
+        else if ($humidity['humidity'] > 43) {
             Alarms::create([
                 'user_id' => auth()->id(),
                 'humidity_id' => $humidity['id'],

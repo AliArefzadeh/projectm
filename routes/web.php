@@ -29,8 +29,10 @@ Route::get('/test', function () {
 Route::get('/humidity/create',[HumidityController::class,'create'])->name('humidity.create');
 Route::post('/store',[HumidityController::class,'store'])->name('humidity.store');
 Route::get('/form',[HumidityController::class,'form'])->name('humidity.form');
+//روت بالا برای دستکاه سیم 800 عه
 
-Route::get('/alarm', [AlarmsController::class, 'store'])->name('alarm.store');
+
+Route::post('/alarm/construction', [AlarmsController::class, 'store'])->name('alarm.store');
 
 
 Route::get('/email', function () {

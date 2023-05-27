@@ -10,7 +10,8 @@ class AlarmsController extends Controller
 {
     public function Store(Request $request)
     {
-        $situation = $request['con'];
+        dd($request['construction']);
+        $situation = $request['construction'];
 
 
         if (isset($situation) && $situation== 'on') {
@@ -22,9 +23,9 @@ class AlarmsController extends Controller
                 'humidity_id' => $lastRecord->id,
                 'construction' => 1,
                 'manual' => 1,
-                'led' => 'off',
+                'led' => 'on',
             ]);
-
         }
+        return redirect()->route('humidity.create')->with('alert', __('messages.success'));
     }
 }
