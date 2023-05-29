@@ -1,5 +1,7 @@
 import './bootstrap';
-import './mainf.js';
+import tgl from './mainf.js';
+console.log(tgl);
+
 
 import '../css/main.css';
 import '../css/bootstrap.min.css';
@@ -11,10 +13,12 @@ import '../css/style.css';
 import '../css/pure.css';
  */
 
-/*
-import Alpine from 'alpinejs';
-
-window.Alpine = Alpine;
-
-Alpine.start();*/
+/*window.tgl= function () {
+    var t = document.getElementById("switch");
+    if (t.value == "on") {
+        t.value = "off";
+    } else if (t.value == "off") {
+        t.value = "on";
+    }
+}*/
 

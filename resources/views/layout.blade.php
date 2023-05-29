@@ -14,7 +14,7 @@
 
     <script src="{{asset('OldProjectm/jquery.min.js')}}"></script>--}}
     <link rel="icon" href="{{ asset('pics/6393411.png') }}">
-    @vite('resources/js/app.js')
+        @vite('resources/js/app.js')
 
 
 

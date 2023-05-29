@@ -1,4 +1,4 @@
-function tgl() {
+window.tgl= function () {
     var t = document.getElementById("switch");
     if (t.value == "on") {
         t.value = "off";
@@ -6,3 +6,5 @@ function tgl() {
         t.value = "on";
     }
 }
+
+export default tgl;
