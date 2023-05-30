@@ -3,16 +3,43 @@
 @section('content')
     <!--content-->
 
+
+
+
     </form>
     <form action="{{route('alarm.store')}}" method="post">
         @csrf
-        <label class="switch">
+        {{--<label class="switch">
             <input type="checkbox" name="construction" value="off" id="switch"  onclick="tgl()">
             <span class="slider round"></span>
-        </label>
+        </label>--}}
+
+        <div class="mainx">
+            {{--<label class="menu-button-wrapper" for="">
+            <input type="checkbox" class="menu-button">--}}
+            <label class="switch menu-button-wrapper" for="">
+                <input type="checkbox" class="menu-button" name="construction" value="off" id="switch" onclick="tgl()">
+                <span class="slider round"></span>
+              {{--  <div class="icon-wrapper">
+                    <label class="hamburger">
+                        <input class="hamburger-input" type="checkbox">
+                        <span class="hamburger-line first"></span>
+                        <span class="hamburger-line second"></span>
+                        <span class="hamburger-line third"></span>
+                    </label>
+                </div>--}}
+                <div class="item-list">
+                    <div><a href="">Home</a></div>
+                    <div><a href="">About</a></div>
+                    <div><a href="">Profile</a></div>
+                    <div><a href="">Contact</a></div>
+                </div>
+            </label>
+
+        </div>
 
         {{--<input type="checkbox" name="construction" value="on" id="switch" checked onclick="tgl()" /><label class="tog" for="switch">Toggle</label>--}}
-        <button id="btn1" value="submit">construction</button>
+        {{--<button id="btn1" value="submit">construction</button>--}}
     </form>
 
 
