@@ -32,7 +32,7 @@ Route::get('/form',[HumidityController::class,'form'])->name('humidity.form');
 //روت بالا برای دستکاه سیم 800 عه
 
 
-Route::post('/alarm/construction', [AlarmsController::class, 'store'])->name('alarm.store');
+Route::get('/alarm/construction', [AlarmsController::class, 'store'])->name('alarm.store');
 
 
 Route::get('/email', function () {

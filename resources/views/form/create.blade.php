@@ -3,11 +3,7 @@
 @section('content')
     <!--content-->
 
-
-
-
-    </form>
-    <form action="{{route('alarm.store')}}" method="post">
+    <form action="{{route('alarm.store')}}" method="get">
         @csrf
         {{--<label class="switch">
             <input type="checkbox" name="construction" value="off" id="switch"  onclick="tgl()">
@@ -15,29 +11,21 @@
         </label>--}}
 
         <div class="mainx">
-            {{--<label class="menu-button-wrapper" for="">
-            <input type="checkbox" class="menu-button">--}}
+            <h5 style="color: white">construction mode:</h5>
             <label class="switch menu-button-wrapper" for="">
-                <input type="checkbox" class="menu-button" name="construction" value="off" id="switch" onclick="tgl()">
+                <input type="checkbox" class="menu-button" name="construction" value="off" id="switch" checked onclick="tgl()">
                 <span class="slider round"></span>
-              {{--  <div class="icon-wrapper">
-                    <label class="hamburger">
-                        <input class="hamburger-input" type="checkbox">
-                        <span class="hamburger-line first"></span>
-                        <span class="hamburger-line second"></span>
-                        <span class="hamburger-line third"></span>
-                    </label>
-                </div>--}}
-                <div class="item-list">
-                    <div><a href="">Home</a></div>
-                    <div><a href="">About</a></div>
-                    <div><a href="">Profile</a></div>
-                    <div><a href="">Contact</a></div>
-                </div>
+                <span class="item-list">
+
+                    <span><input class="inputLed" type="submit" name="led" value="LED on"><i class="gg-check-o"></i></span>
+                    <span> <input class="inputLed" type="submit" name="led" value="LED off">{{--<i class="gg-check-o"></i>--}}</span>
+
+                    {{--<div><a href="">LED on<i class="gg-check-o"></i></a></div>--}}
+                    {{--<div><a href="">LED off<i class="gg-check-o"></i></a></div>--}}
+
+                </span>
             </label>
-
         </div>
-
         {{--<input type="checkbox" name="construction" value="on" id="switch" checked onclick="tgl()" /><label class="tog" for="switch">Toggle</label>--}}
         {{--<button id="btn1" value="submit">construction</button>--}}
     </form>
@@ -46,7 +34,7 @@
 
 
     <div class="menu"
-         style="background-color: #559bd4; padding: 5px;margin: 20px 10px 30px 10px;border-radius: 10px;text-align: center">
+         style="/*background-color: #559bd4;*/ color: white; padding: 5px;margin: 20px 10px 30px 10px;border-radius: 10px;text-align: center">
         <form action="{{route('humidity.store')}}" method="post" style="margin-bottom: 25px">
             @csrf
             <label>enter humidity :</label>
@@ -56,9 +44,7 @@
             <button id="clearNum" type="reset">Clear</button>
             <textarea name="description" id="" cols="65" rows="4"
                       style="display: block;text-align: center;margin:10px auto 0 auto;direction: rtl"></textarea>
-            <label for="construction">construction</label>
-
-
+        </form>
     </div>
 
     <!--led on/off-->
@@ -66,21 +52,15 @@
     <!--این بخش در صفحه دیگری قرار داشت-->
 
     <div class="send">
-        <div id="switch"
-             style="text-align: center; margin-left: auto;margin-right: auto; position: center;display: inline-block ">
-
-            <div
-                style="border-radius: 10px; background-color:#62e829 ;margin-left: 10px;padding: 5px; width:65%;display: inline-block ">
-                on
-            </div>
-            <div
-                style="border-radius: 10px; background-color:#B51945 ;margin-left: 10px;padding: 5px; width:65%;display: inline-block ">
-                off
-            </div>
+        <h4 style="margin-bottom: 10px">manual on/off switch :</h4>
+        <div
+            style="text-align: center; margin-left: auto;margin-right: auto; position: center;display: inline-flex ">
             <form action="" method="get" style="margin-bottom: 25px; margin-top: 25px;">
                 <input type="number" name="onoff" id="onoff" style="display: none" value="3">
             </form>
             <button value="submit" id="led">led on/off</button>
+            <div class="red led"></div>
+            <div class="green led"></div>
             <!--برای اینکه صفحه رفرش نشود و نتایج به درستی نمایش داده شوند در تگ form قرار نگرفته-->
 
         </div>

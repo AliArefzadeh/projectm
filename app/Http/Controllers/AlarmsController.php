@@ -10,7 +10,7 @@ class AlarmsController extends Controller
 {
     public function Store(Request $request)
     {
-        dd($request['construction']);
+        dd($request);
         $situation = $request['construction'];
 
 
