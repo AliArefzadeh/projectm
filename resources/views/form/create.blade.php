@@ -3,7 +3,7 @@
 @section('content')
     <!--content-->
 
-    <form action="{{route('alarm.store')}}" method="get">
+    <form action="{{route('alarm.store')}}" method="post" id="form2">
         @csrf
         {{--<label class="switch">
             <input type="checkbox" name="construction" value="off" id="switch"  onclick="tgl()">
@@ -13,11 +13,12 @@
         <div class="mainx">
             <h5 style="color: white">construction mode:</h5>
             <label class="switch menu-button-wrapper" for="">
-                <input type="checkbox" class="menu-button" name="construction" value="off" id="switch" checked onclick="tgl()">
+                <input name="construction" type="hidden" value="off">
+                <input type="checkbox" class="menu-button" name="construction" value="on" id="switch" {{--onclick="tgl()"--}} {{--onchange="submit()"--}}>
                 <span class="slider round"></span>
                 <span class="item-list">
 
-                    <span><input class="inputLed" type="submit" name="led" value="LED on"><i class="gg-check-o"></i></span>
+                    <span><input class="inputLed" type="submit" name="led" value="LED on"></span>
                     <span> <input class="inputLed" type="submit" name="led" value="LED off">{{--<i class="gg-check-o"></i>--}}</span>
 
                     {{--<div><a href="">LED on<i class="gg-check-o"></i></a></div>--}}

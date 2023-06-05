@@ -14,7 +14,7 @@ class Humidity extends Model
 
     public function alarm()
     {
-        $this->hasMany(Alarms::class);
+        return $this->hasMany(Alarms::class);
     }
 
     public function getPersianTimeAttribute($humidity)

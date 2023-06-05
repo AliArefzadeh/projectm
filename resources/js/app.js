@@ -1,6 +1,15 @@
+import jQuery from 'jquery';
+window.$ = jQuery;
+
 import './bootstrap';
+
 import tgl from './mainf.js';
 console.log(tgl);
+
+import submit from './mainf.js';
+console.log(submit);
+
+
 
 
 import '../css/main.css';
@@ -20,5 +29,15 @@ import '../css/pure.css';
     } else if (t.value == "off") {
         t.value = "on";
     }
-}*/
+}
+
+$("#switch").change(function() {
+    var x = document.getElementById("switch");
+
+        console.log($("#switch").val());
+        $('#form2').submit();
+    });
+
+
+*/
 

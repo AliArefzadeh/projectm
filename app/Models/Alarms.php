@@ -13,11 +13,11 @@ class Alarms extends Model
 
     public function user()
     {
-        $this->belongsTo(User::class);
+       return $this->belongsTo(User::class);
     }
 
     public function humidity()
     {
-        $this->belongsTo(Humidity::class);
+       return $this->belongsTo(Humidity::class);
     }
 }
