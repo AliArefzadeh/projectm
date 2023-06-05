@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\storeHumidityRequest;
+use App\Models\Alarms;
 use App\Models\Humidity;
 use Illuminate\Http\Request;
 
@@ -10,8 +11,9 @@ class HumidityController extends Controller
 {
     public function create()
     {
-        $humidity = Humidity::all();
-        return view('form.create', compact('humidity'));
+        $lastHumidity = Humidity::latest()->first();
+        $lastAlarm = Alarms::latest()->first();
+        return view('form.create', compact('lastHumidity','lastAlarm'));
     }
     public function store(storeHumidityRequest $request)
     {

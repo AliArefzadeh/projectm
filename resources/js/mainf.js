@@ -20,18 +20,22 @@ function tgl () {
 }
 
 function submit () {
-    $(function ()
-    {
-        $("#form2").on('change', function ()
-        {
-            if (document.getElementById("switch").checked)
-            {
-                $("#form2").submit();
+    document.addEventListener("DOMContentLoaded", function(ev){
+
+        // Get the checkbox element
+        const checkBoxSwitch = document.getElementById('switch');
+
+        // Attach an event handler to the checkox
+        checkBoxSwitch.addEventListener("change", function(e){
+
+            // In case the checkbox is checked
+            if(checkBoxSwitch.checked === true) {
+
             }
-            else
-            {
-                e.preventDefault();
-                alert('Please check the box before submitting the form');
+            // In case the checkbox is not checked
+            else {
+                console.log($("#switch").val());
+                $('#form2').submit();
             }
         });
     });
@@ -48,25 +52,7 @@ function submit () {
 
 }*/
 
-document.addEventListener("DOMContentLoaded", function(ev){
 
-    // Get the checkbox element
-    const checkBoxSwitch = document.getElementById('switch');
-
-    // Attach an event handler to the checkox
-    checkBoxSwitch.addEventListener("change", function(e){
-
-        // In case the checkbox is checked
-        if(checkBoxSwitch.checked === true) {
-
-        }
-        // In case the checkbox is not checked
-        else {
-            console.log($("#switch").val());
-            $('#form2').submit();
-        }
-    });
-});
 
 
 

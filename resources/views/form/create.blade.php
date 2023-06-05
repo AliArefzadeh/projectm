@@ -14,12 +14,14 @@
             <h5 style="color: white">construction mode:</h5>
             <label class="switch menu-button-wrapper" for="">
                 <input name="construction" type="hidden" value="off">
-                <input type="checkbox" class="menu-button" name="construction" value="on" id="switch" {{--onclick="tgl()"--}} {{--onchange="submit()"--}}>
+                {{--<input type="checkbox" class="menu-button" name="construction" value="on" id="switch" onclick="tgl()" onchange="submit()">--}}
+                <input type="checkbox" class="menu-button" name="construction" value="on" id="switch" {{$lastAlarm->construction ==0 ? '' : "onchange=submit() checked"}}>
                 <span class="slider round"></span>
                 <span class="item-list">
 
-                    <span><input class="inputLed" type="submit" name="led" value="LED on"></span>
-                    <span> <input class="inputLed" type="submit" name="led" value="LED off">{{--<i class="gg-check-o"></i>--}}</span>
+                   <span><input class="inputLed" type="submit" name="led" value="LED on"><i {{$lastAlarm->construction==1 &&$lastAlarm->led=="on" ? 'class=gg-check-o' : '' }}></i></span>
+                    <span> <input class="inputLed" type="submit" name="led" value="LED off"><i {{$lastAlarm->construction==1 &&$lastAlarm->led=="off" ? 'class=gg-check-o' : '' }}></i></span>
+
 
                     {{--<div><a href="">LED on<i class="gg-check-o"></i></a></div>--}}
                     {{--<div><a href="">LED off<i class="gg-check-o"></i></a></div>--}}
@@ -60,8 +62,8 @@
                 <input type="number" name="onoff" id="onoff" style="display: none" value="3">
             </form>
             <button value="submit" id="led">led on/off</button>
-            <div class="red led"></div>
-            <div class="green led"></div>
+            <div class="{{$lastAlarm->led=="off" ? 'red led' :''}} "></div>
+            <div class="{{$lastAlarm->led=="on" ? 'green led' :''}}"></div>
             <!--برای اینکه صفحه رفرش نشود و نتایج به درستی نمایش داده شوند در تگ form قرار نگرفته-->
 
         </div>

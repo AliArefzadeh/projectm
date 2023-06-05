@@ -16,13 +16,25 @@ class HumidityObserver
         /*$prev = $alarms['id'] - 1;
         $prev = Alarms::find($prev);*/
         if ($alarms['construction'] == '1') {
-            Alarms::create([
-                'user_id' => auth()->id(),
-                'humidity_id' => $humidity['id'],
-                'construction' => 1,
-                'manual' => 1,
-                'led' => 'on',
-            ]);
+            if ($alarms['led'] == 'on'){
+                Alarms::create([
+                    'user_id' => auth()->id(),
+                    'humidity_id' => $humidity['id'],
+                    'construction' => 1,
+                    'manual' => 1,
+                    'led' => 'on',
+                ]);
+            }
+            elseif ($alarms['led'] == 'off'){
+                Alarms::create([
+                    'user_id' => auth()->id(),
+                    'humidity_id' => $humidity['id'],
+                    'construction' => 1,
+                    'manual' => 1,
+                    'led' => 'off',
+                ]);
+            }
+
         }
 
         else if ($humidity['humidity'] > 43) {

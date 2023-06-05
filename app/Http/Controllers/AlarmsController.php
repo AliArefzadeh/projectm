@@ -15,7 +15,7 @@ class AlarmsController extends Controller
         $led = $request['led'];
         $lastRecord = Humidity::latest()->first();
         /*$lastRecord = Humidity::all()->last();*/
-        $latestAlarm = $lastRecord->alarm()->latest()->first()->led;
+        /*$latestAlarm = $lastRecord->alarm()->latest()->first()->led;*/
 
 
 
@@ -39,7 +39,7 @@ class AlarmsController extends Controller
             }
 
         }
-        elseif (isset($situation) && $situation== 'off' && $latestAlarm== 'on') {
+        elseif (isset($situation) && $situation== 'off' ) {
             Alarms::create([
                 'user_id' => auth()->id(),
                 'humidity_id' => $lastRecord->id,
