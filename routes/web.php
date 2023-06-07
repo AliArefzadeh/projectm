@@ -34,6 +34,9 @@ Route::get('/form',[HumidityController::class,'form'])->name('humidity.form');
 
 Route::post('/alarm/construction', [AlarmsController::class, 'store'])->name('alarm.store');
 
+Route::post('/alarm/{humidity}', [AlarmsController::class, 'update'])->name('alarm.update');
+
+
 
 Route::get('/email', function () {
     /*$notification = new Notification();*/

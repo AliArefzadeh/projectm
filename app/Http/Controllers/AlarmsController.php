@@ -51,4 +51,40 @@ class AlarmsController extends Controller
 
         return redirect()->route('humidity.create')->with('alert', __('messages.success'));
     }
+
+    public function update(Request $request,Humidity $humidity)
+    {
+        /*dd($request['onoff']);*/
+        $led = $request['onoff'];
+        $alarms=$humidity->alarm()->latest()->first();
+        /*dd($request);*/
+        if ($led == 'on' && $alarms->construction == 0) {
+            $request->merge([
+                'led' => 'off',
+                'manual' => '1',
+                'user_id'=>auth()->id(),
+                'construction'=>'0'
+            ]);
+            $humidity->alarm()->create($request->all());
+            return redirect()->route('humidity.create')->with('alert', __('messages.success'));
+        }
+        elseif ($led == 'off' && $alarms->construction == 0) {
+            $request->merge([
+                'led' => 'on',
+                'manual' => '1',
+                'user_id'=>auth()->id(),
+                'construction'=>'0'
+            ]);
+            $humidity->alarm()->create($request->all());
+            return redirect()->route('humidity.create')->with('alert', __('messages.success'));
+        }
+        return redirect()->route('humidity.create')->with('alert_e', __('messages.constructionsIsOn'));
+    }
+
+
+
+
+
+
+
 }

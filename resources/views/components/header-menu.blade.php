@@ -1,9 +1,9 @@
 
 
 <nav class="navbar navbar-inverse">
-    <form class="navbar-form navbar-left" action="/action_page.php">
+    <form class="navbar-form navbar-left" action="#" method="get">
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
+            <input type="text" name="q" class="form-control" placeholder="Search">
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
     </form>

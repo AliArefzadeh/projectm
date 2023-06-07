@@ -106,6 +106,11 @@
                 {{session('alert')}}
             </div>
         @endif
+        @if(session('alert_e') )
+            <div class="alert alert-danger">
+                {{session('alert_e')}}
+            </div>
+        @endif
 
         @yield('content')
 
