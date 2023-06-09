@@ -32,16 +32,23 @@ class HumidityController extends Controller
         }
         $humidities = 'Waiting for your selection...';
         if (isset($firstDate) && isset($lastDate)) {
-            $humidities = DB::table('humidities')->whereBetween('created_at',[$firstDate,$lastDate])->get();
+            $humidities = DB::table('humidities')->leftjoin('alarms','humidities.id','=','alarms.humidity_id')
+                ->select('humidities.*','alarms.led','alarms.humidity_id')->whereBetween('humidities.created_at',[$firstDate,$lastDate])->get();
         }
 
+        if (is_object($humidities)) {
+            $x = array();
+            $i = 0;
 
-
-
-
-
-
-
+            foreach ($humidities as $humidity ) {
+                $y=$humidity->humidity_id;
+                $x[] = $y;
+                if ($i!==0 && $x[$i] == $x[$i-1] && $x[$i]!==null) {
+                    unset($humidities[$i]);
+                }
+                $i++;
+            }
+        }
         return view('form.create', compact('lastHumidity','lastAlarm','humidities'));
     }
 

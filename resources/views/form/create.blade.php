@@ -47,7 +47,6 @@
     <!--searchBar-->
     <div>
         <form method="get" class="search">
-            @csrf
             <label> select your time period</label>
             <br>
             <div class="total">
@@ -55,11 +54,11 @@
                 <div> MONTH</div>
                 <div> DAY</div>
             </div>
-            <input type="number" min="2022" max="2024" value="2022" id="fyear" name="fyear">
+            <input type="number" min="2021" max="2023" value="2022" id="fyear" name="fyear">
             <input type="number" min="1" max="12" value="9" id="fmon" name="fmon">
             <input type="number" min="1" max="31" value="7" id="fday" name="fday">
             <br>
-            <input type="number" min="2022" max="2024" value="2023" id="lyear" name="lyear">
+            <input type="number" min="2021" max="2023" value="2023" id="lyear" name="lyear">
             <input type="number" min="1" max="12" value="9" id="lmon" name="lmon">
             <input type="number" min="1" max="31" value="9" id="lday" name="lday">
             <br>
@@ -76,13 +75,14 @@
 
             @if(is_string($humidities))
                 <div class="results">
-                    <div class="result">Waiting for your selection...</div>
+                    <div class="result" style="color: black">Waiting for your selection...</div>
                 </div>
             @elseif(is_object($humidities))
                 @foreach($humidities as $humidity )
                     <div class="results" style="color: black">
                         <div class='result1'>{{$humidity->humidity}}%RH</div>
                         <div class='result1'>{{$humidity->created_at}}</div>
+                        <div class='result1'>{{$humidity->led ?? ''}}</div>
                         <div class="clearfix"></div>
                     </div>
                 @endforeach
