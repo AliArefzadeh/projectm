@@ -10,7 +10,7 @@
 
     <div class="container-fluid">
         <ul class="nav navbar-nav">
-            <li><a href="#">Page 2</a></li>
+            <li><a href="{{route('alarm.index')}}">Control Room</a></li>
             <li><a href="{{route('humidity.create')}}">Data Mangemant</a></li>
             <li class="active"><a href="{{route('index')}}">Home</a></li>
         </ul>

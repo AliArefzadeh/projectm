@@ -27,6 +27,7 @@ Route::get('/test', function () {
 } );
 
 Route::get('/humidity/create',[HumidityController::class,'create'])->name('humidity.create');
+Route::get('/humidity/controlRoom',[AlarmsController::class,'index'])->name('alarm.index');
 Route::post('/store',[HumidityController::class,'store'])->name('humidity.store');
 Route::get('/form',[HumidityController::class,'form'])->name('humidity.form');
 //روت بالا برای دستکاه سیم 800 عه

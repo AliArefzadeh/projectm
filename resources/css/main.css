@@ -129,6 +129,11 @@ float: left;
 
 
 /*searchBar*/
+.filter {
+    display: inline-flex;
+    margin-top: 20px;
+    padding: 5px;
+}
 .search{
     position: center;
     width: 50%;
@@ -168,6 +173,11 @@ div {
     margin: 0px auto 35px auto;
     text-align: center;
     font-family: Sansation_Regular;
+}
+#send {
+    display: block;
+    margin: auto;
+    margin-top: 5px;
 }
 
 

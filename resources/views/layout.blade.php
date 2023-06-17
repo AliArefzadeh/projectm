@@ -107,7 +107,7 @@
             </div>
         @endif
         @if(session('alert_e') )
-            <div class="alert alert-danger">
+            <div class="alert alert-danger" style="margin: 15px;border-radius: 5px;">
                 {{session('alert_e')}}
             </div>
         @endif
