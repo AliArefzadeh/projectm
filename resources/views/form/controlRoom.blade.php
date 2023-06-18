@@ -24,13 +24,13 @@
                 <div> MONTH</div>
                 <div> DAY</div>
             </div>
-            <input type="number" min="2021" max="2023" value="2022" id="fyear" name="fyear">
-            <input type="number" min="1" max="12" value="9" id="fmon" name="fmon">
-            <input type="number" min="1" max="31" value="7" id="fday" name="fday">
+            <input type="number" min="2021" max="2023" value="{{request()->query('fyear') ?? '2022'}}" id="fyear" name="fyear">
+            <input type="number" min="1" max="12" value="{{request()->query('fmon') ?? '9'}}" id="fmon" name="fmon">
+            <input type="number" min="1" max="31" value="{{request()->query('fday') ?? '17'}}" id="fday" name="fday">
             <br>
-            <input type="number" min="2021" max="2023" value="2023" id="lyear" name="lyear">
-            <input type="number" min="1" max="12" value="9" id="lmon" name="lmon">
-            <input type="number" min="1" max="31" value="9" id="lday" name="lday">
+            <input type="number" min="2021" max="2023" value="{{request()->query('lyear') ?? '2023'}}" id="lyear" name="lyear">
+            <input type="number" min="1" max="12" value="{{request()->query('lmon') ?? '9'}}" id="lmon" name="lmon">
+            <input type="number" min="1" max="31" value="{{request()->query('lday') ?? '17'}}" id="lday" name="lday">
             <br>
 
             {{--filter section--}}

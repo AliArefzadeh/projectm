@@ -75,7 +75,7 @@
 
             @if(is_string($humidities))
                 <div class="results">
-                    <div class="result" style="color: black">{{$humidities}}</div>
+                    <div class="result" style="color: black">waiting for your selection</div>
                 </div>
             @elseif(is_object($humidities))
                 @foreach($humidities as $humidity )

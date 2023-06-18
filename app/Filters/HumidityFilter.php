@@ -38,15 +38,18 @@ class HumidityFilter
             $lday = $data['lday'];
             $lastDate = "$lyear" . '-' . "$lmon" . '-' . "$lday";
         }
-        $humidities = 'Waiting for your selection...';
+
         if (isset($firstDate) && isset($lastDate)) {
             $humidities = DB::table('humidities')->leftjoin('alarms', 'humidities.id', '=', 'alarms.humidity_id')
                 ->select('humidities.*', 'alarms.led', 'alarms.humidity_id')->whereBetween('humidities.created_at', [$firstDate, $lastDate])->get();
 
             $this->deleteDuplicates($humidities);
         }
-/*
-        is_object($humidities) == 1 ? $this->deleteDuplicates($humidities) : '';*/
+        if (!isset($humidities)) {
+          return $humidities = 'Waiting for your selection...';
+        }
+
+        /*is_object($humidities) == 1 ? $this->deleteDuplicates($humidities) : '';*/
     }
 
     public function deleteDuplicates($humidities)

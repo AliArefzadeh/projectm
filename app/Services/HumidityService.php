@@ -10,7 +10,7 @@ class HumidityService
     public function create(Humidity $humidity, array $data)
     {
 
-        $lastHumidity = $humidity->latest()->first();
+      /*  $lastHumidity = $humidity->latest()->first();
         $lastAlarm = Alarms::latest()->first();
         if (isset($data['fyear']) && isset($data['fmon']) && isset($data['fday'])) {
             $fyear = $data['fyear'];
@@ -44,7 +44,7 @@ class HumidityService
                 $i++;
             }
         }
-        return view('form.create', compact('lastHumidity','lastAlarm','humidities'));
+        return view('form.create', compact('lastHumidity','lastAlarm','humidities'));*/
 
     }
 
