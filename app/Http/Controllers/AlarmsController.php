@@ -18,7 +18,9 @@ class AlarmsController extends Controller
 
         /*$lastHumidity = $humidity->latest()->first();*/
         /*$lastAlarm = Alarms::latest()->first();*/
-        $alarms=Alarms::filters($request->all())->get();
+        /*$alarms=Alarms::filters($request->all())->get();*/
+        $alarms=Alarms::filters($request->all());
+
 
 
 

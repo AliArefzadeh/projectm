@@ -44,15 +44,15 @@
                     </select>
                 </div>
                 <input type="hidden" value="{{request()->query('q')}}" name="q">
-                <div style="padding: 5px">
+                {{--<div style="padding: 5px">
                     <label for="inputState" style="font-size: 15px/*;display: block*/"> </label>
-                    <select id="inputState" name="length" {{--class="form-control"--}}>
+                    <select id="inputState" name="length" --}}{{--class="form-control"--}}{{-->
                         <option {{request()->query('length') == null ? 'selected' : ''}} value="">همه</option>
                         <option {{request()->query('length') == 1 ? 'selected' : ''}} value="1">کمتر از یک دقیقه</option>
                         <option {{request()->query('length') == 2 ? 'selected' : ''}} value="2">1 تا 5 دقیقه</option>
                         <option {{request()->query('length') == 3 ? 'selected' : ''}} value="3">بیش از 5 دقیقه</option>
                     </select>
-                </div>
+                </div>--}}
 
             </div>
 
@@ -78,7 +78,7 @@
                     <div class="result" style="color: black">Waiting for your selection...</div>
                 </div>
             @elseif(is_object($alarms))
-                @foreach($alarms as $alarm )
+                @foreach($alarms->get() as $alarm )
                     <div class="results" style="color: black">
                         <div class='result1'>LED: {{$alarm->led}}</div>
                         <div class='result1'>{{$alarm->created_at}}</div>

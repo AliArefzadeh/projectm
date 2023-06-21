@@ -16,9 +16,15 @@ class HumidityController extends Controller
         $lastHumidity = Humidity::latest()->first();
         $lastAlarm = Alarms::latest()->first();
 
-        $humidities = Humidity::filter($request->all())->orderByDesc('created_at')->get();
-        //این get() بالا در واقع توی کوئری ها نوشته شده بود همونطور که توی کامنت های زیر میبینی
-        //ولی جواب نداد و از اونجا حذف و به اینجا اورده شد
+        /*$humidities = Humidity::filter($request->all())->orderByDesc('created_at')->get();*/
+        /*$humidities = is_object(Humidity::filter($request->all()))==1 ? Humidity::filter($request->all())->get() : Humidity::filter($request->all());*/
+        $humidities = Humidity::filter($request->all());
+
+
+        //اگر $humidities استرینگ باشه نمیتونی فانکشن get() رو روش صدا بزنی پس توی خوده صفحه create.blade این متد رو بهش
+        //اضافه کردیم که لازم نباشه مثل کامنتهای بالا از لاجیک توی کنترلر استفاده کنیم.
+
+
         //بعد دوباره $this->>buildr رو حذف و از همون DB استفاده کردیم تا بشه از فانکشن duplicate هم استفاده کرد و
         //بازم get() رو به اخرش برگردوندیدم
 

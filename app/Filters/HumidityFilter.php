@@ -18,7 +18,7 @@ class HumidityFilter
     public function apply($data)
     {
 
-        $this->SortByTime($data);
+       return  $this->SortByTime($data);
 
     }
 
@@ -41,12 +41,13 @@ class HumidityFilter
 
         if (isset($firstDate) && isset($lastDate)) {
             $humidities = DB::table('humidities')->leftjoin('alarms', 'humidities.id', '=', 'alarms.humidity_id')
-                ->select('humidities.*', 'alarms.led', 'alarms.humidity_id')->whereBetween('humidities.created_at', [$firstDate, $lastDate])->get();
+                ->select('humidities.*', 'alarms.led', 'alarms.humidity_id')->whereBetween('humidities.created_at', [$firstDate, $lastDate])->orderByDesc('created_at')->get();
 
-            $this->deleteDuplicates($humidities);
+            $humidities=$this->deleteDuplicates($humidities);
+            return $humidities;
         }
         if (!isset($humidities)) {
-          return $humidities = 'Waiting for your selection...';
+            return $humidities = 'Waiting for your selection...';
         }
 
         /*is_object($humidities) == 1 ? $this->deleteDuplicates($humidities) : '';*/
@@ -66,6 +67,7 @@ class HumidityFilter
             }
             $i++;
         }
+        return $humidities;
 
     }
 }

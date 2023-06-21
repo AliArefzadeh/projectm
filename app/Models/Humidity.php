@@ -27,7 +27,7 @@ class Humidity extends Model
 
     public function scopeFilter(Builder $builder,array $data)
     {
-        return (new HumidityFilter($builder))->apply($data);
+       return (new HumidityFilter($builder))->apply($data);
     }
 
 }

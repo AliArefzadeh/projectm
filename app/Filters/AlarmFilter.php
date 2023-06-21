@@ -29,19 +29,18 @@ class AlarmFilter
 
     public function apply($data)
     {
-        $x=$this->SortByTime($this->firstDate,$this->lastDate);
+         $x= $this->SortByTime($data,$this->firstDate,$this->lastDate);
         if (is_object($x) && isset($data['sortBy'])) {
-            $this->SortByManual($data,$this->firstDate,$this->lastDate);
-            $this->SortByConstruction($data,$this->firstDate,$this->lastDate);
+          $x=  $this->SortByManual($data,$this->firstDate,$this->lastDate);
+            $x= $this->SortByConstruction($data,$this->firstDate,$this->lastDate);
         }
+        return $x;
     }
 
-    public function SortByTime($firstDate,$lastDate)
+    public function SortByTime($data,$firstDate,$lastDate)
     {
-
-
         if (isset($firstDate) && isset($lastDate)) {
-           return  DB::table('alarms')->whereBetween('alarms.created_at', [$firstDate, $lastDate])->orderByDesc('created_at');
+          return  $this->builder->whereBetween('alarms.created_at', [$firstDate, $lastDate]);
         } elseif (1) {
            return  'Waiting for your selection...';
         }
@@ -51,7 +50,7 @@ class AlarmFilter
     {
 
             if (  $data['sortBy']=='forced') {
-                DB::table('alarms')->whereBetween('alarms.created_at',[$firstDate,$lastDate])->where('alarms.manual','=','1')->orderByDesc('created_at')->get();
+               return $this->builder->whereBetween('alarms.created_at',[$firstDate,$lastDate])->where('alarms.manual','=','1');
             }
 
 
@@ -60,7 +59,7 @@ class AlarmFilter
     public function SortByConstruction($data,$firstDate,$lastDate)
     {
         if (  $data['sortBy']=='construction') {
-             DB::table('alarms')->whereBetween('alarms.created_at',[$firstDate,$lastDate])->where('alarms.construction','=','1')->orderByDesc('created_at')->get();
+           return $this->builder->whereBetween('alarms.created_at',[$firstDate,$lastDate])->where('alarms.construction','=','1');
         }
     }
 }
