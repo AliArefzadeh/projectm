@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Middleware\CheckConstructionMode;
 use App\Http\Requests\AlarmRequest;
 use App\Models\Alarms;
 use App\Models\Humidity;
@@ -13,6 +14,11 @@ use function Composer\Autoload\includeFile;
 
 class AlarmsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(CheckConstructionMode::class,['only'=>['update']]);
+    }
+
     public function index(Request $request)
     {
 
@@ -41,10 +47,10 @@ class AlarmsController extends Controller
     public function update(AlarmRequest $request,Humidity $humidity)
     {
 
-        $alarms = $humidity->alarm()->latest()->first();
+        /*$alarms = $humidity->alarm()->latest()->first();
         if ($alarms && $alarms->construction == 1) {
             return redirect()->route('humidity.create')->with('alert_e', __('messages.constructionsIsOn'));
-        }
+        }*/
         /*متن بالا رو با میدل ور انجام بده*/
 
         (new AlarmServise)->update($request->all(), $humidity);

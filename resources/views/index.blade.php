@@ -13,7 +13,7 @@
             <div style='display: inline-flex'>
                 <div class='inblock' style='direction: ltr'>reletive humidity :</div>
                 <div class='last-update inblock'>
-                    humidity %RH
+                    {{$lastHumidity->humidity}} %RH
                 </div>
                 <div class='loader' style='margin-left: 15px'></div>
             </div>
@@ -26,17 +26,17 @@
     <!--این بخش در صفحه دیگری قرار داشت-->
 
     <div class="send">
-        <h4 style="margin-bottom: 10px">manual on/off switch :</h4>
+        {{--<h4 style="margin-bottom: 10px">manual on/off switch :</h4>--}}
         <div
             style="text-align: center; margin-left: auto;margin-right: auto; position: center;display: inline-flex ">
-            <form action="{{route('alarm.update',$lastHumidity)}}" method="post"
+           {{-- <form action="{{route('alarm.update',$lastHumidity)}}" method="post"
                   style="margin-bottom: 25px; margin-top: 25px;">
                 @csrf
                 <input type="text" name="onoff" id="onoff" style="display: none"
                        value="{{$lastAlarm->led=="off" ? 'off' :'on'}}">
                 <button value="submit" id="led">led on/off</button>
                 <div class="{{$lastAlarm->led=="off" ? 'red led' :'green led'}} "></div>
-            </form>
+            </form>--}}
 
 
             {{--<div class="{{$lastAlarm->led=="on" ? '' :''}}"></div>--}}
