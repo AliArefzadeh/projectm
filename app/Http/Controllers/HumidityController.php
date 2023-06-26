@@ -39,11 +39,11 @@ class HumidityController extends Controller
         return redirect()->route('humidity.create')->with('alert', __('messages.success'));
     }
 
-    public function form(storeHumidityRequest $request)
+    /*public function form(storeHumidityRequest $request)
     {
         Humidity::create($request->all());
 
         return redirect()->route('humidity.create')->with('alert', __('messages.success'));
-    }
+    }*/
 
 }

@@ -54,7 +54,7 @@ class AlarmsController extends Controller
         /*متن بالا رو با میدل ور انجام بده*/
 
         (new AlarmServise)->update($request->all(), $humidity);
-        return redirect()->route('humidity.create')->with('alert', __('messages.success'));
+        return redirect()->back()->with('alert', __('messages.success'));
 
 
     }

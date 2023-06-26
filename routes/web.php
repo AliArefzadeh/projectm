@@ -5,9 +5,11 @@ use App\Http\Controllers\AlarmsController;
 use App\Http\Controllers\HumidityController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ProfileController;
+use App\Jobs\ProcessHumidity;
 use App\Mail\TopicCreated;
 use App\Models\User;
 use App\Services\Notification\Notification;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,7 +34,13 @@ Route::middleware('auth.check')->group(function () {
 });
 
 Route::post('/store',[HumidityController::class,'store'])->name('humidity.store');
-Route::get('/form',[HumidityController::class,'form'])->name('humidity.form');
+
+
+Route::get('/form', function (Request $request) {
+    ProcessHumidity::dispatch($request->all());
+});
+
+//Route::get('/form',[HumidityController::class,'form'])->name('humidity.form');
 //روت بالا برای دستکاه سیم 800 عه
 
 
@@ -45,7 +53,7 @@ Route::post('/alarm/{humidity}', [AlarmsController::class, 'update'])->name('ala
 Route::get('/email', function () {
     /*$notification = new Notification();*/
     //وقتی یه کلاس دستی خودت ساختی از resolve استفاده کن
-    //اگر تعدادشون زیاد بود باید یه کرای توی appServiceProvider انجام بدی
+    //اگر تعدادشون زیاد بود باید یه کاری توی appServiceProvider انجام بدی
     //برای اطلاعات بیشتر ویدیو "طراحی سیستم بخش اول " ببین
 
     $notification = resolve(Notification::class);

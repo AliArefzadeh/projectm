@@ -88,8 +88,18 @@ color: #202833 !important;
     border-radius: 5px ;
 
 }
+.labels-top {
 
+}
+.top-lable {
 
+    left: 50%;
+    transform: translate(-50%, 0);
+    position: absolute;
+}
+.toggle-mode {
+
+}
 
 
 /*sidebar*/

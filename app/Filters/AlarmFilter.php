@@ -40,7 +40,9 @@ class AlarmFilter
     public function SortByTime($data,$firstDate,$lastDate)
     {
         if (isset($firstDate) && isset($lastDate)) {
-          return  $this->builder->whereBetween('alarms.created_at', [$firstDate, $lastDate]);
+           $this->builder->whereBetween('alarms.created_at', [$firstDate, $lastDate])->leftjoin('humidities', 'humidities.id', '=', 'alarms.humidity_id')
+                ->select('alarms.*', 'humidities.humidity');
+
         } elseif (1) {
            return  'Waiting for your selection...';
         }

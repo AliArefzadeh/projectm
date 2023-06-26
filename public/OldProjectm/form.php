@@ -13,12 +13,12 @@
 
     <form method="get" style="margin-bottom: 25px">
         <label>enter humidity :</label>
-        <!--<input type="number" name="humid" >
+        <input type="number" name="humid" >
         <button id="btn1" value="submit">Save</button>
-        <button id="clearNum" type="reset">Clear</button>-->
+        <button id="clearNum" type="reset">Clear</button>
 		<div>
-        <input type="file">
-		<input type="submit">
+       <!-- <input type="file">
+		<input type="submit">-->
     </div>
     </form>
 </div>

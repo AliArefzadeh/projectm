@@ -1,5 +1,5 @@
 @auth()
-    <form action="{{route('alarm.store')}}" method="post" id="form2">
+    <form action="{{route('alarm.store')}}" method="post" id="form2" class="toggle-mode">
         @csrf
         {{--<label class="switch">
             <input type="checkbox" name="construction" value="off" id="switch"  onclick="tgl()">

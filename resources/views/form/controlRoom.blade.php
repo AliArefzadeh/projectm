@@ -3,7 +3,10 @@
 @section('content')
     <!--content-->
 
-    <x-construction-mode></x-construction-mode>
+        <h3  class="top-lable">checking Alarms</h3>
+        <x-construction-mode></x-construction-mode>
+
+
 
 
     {{--humidity input section--}}
@@ -11,13 +14,13 @@
     <!--led on/off-->
     <!--led on/off-->
     <!--این بخش در صفحه دیگری قرار داشت-->
-
+    <x-led-switch></x-led-switch>
 
 
     <!--searchBar-->
     <div>
         <form method="get" class="search">
-            <label> select your time period</label>
+            <label> select your alarm time period</label>
             <br>
             <div class="total">
                 <div> YEAR</div>
@@ -78,8 +81,9 @@
                     <div class="result" style="color: black">Waiting for your selection...</div>
                 </div>
             @elseif(is_object($alarms))
-                @foreach($alarms->get() as $alarm )
+                @foreach($alarms->orderByDesc('created_at')->get() as $alarm )
                     <div class="results" style="color: black">
+                        <div class='result1'> {{$alarm->humidity}}%</div>
                         <div class='result1'>LED: {{$alarm->led}}</div>
                         <div class='result1'>{{$alarm->created_at}}</div>
                         <div class='result1'>{{$alarm->manual==1 ?'manual change' : 'auto saved'}}</div>
